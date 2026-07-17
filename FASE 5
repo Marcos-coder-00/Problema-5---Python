@@ -1,9 +1,10 @@
-[
+matriz_horas = [
     ["Ana Gómez", 8, 9, 8, 8, 8],       # Total: 41 horas (Sobretiempo)
     ["Carlos Pérez", 8, 8, 7, 8, 6],    # Total: 37 horas (Horario Estándar)
     ["María López", 9, 9, 9, 8, 8],     # Total: 43 horas (Sobretiempo)
     ["Juan Torres", 8, 8, 8, 8, 8]      # Total: 40 horas (Horario Estándar)
 ]
+
 
 def procesar_jornada_laboral(matriz):
     UMBRAL_HORAS = 40
@@ -23,7 +24,8 @@ def procesar_jornada_laboral(matriz):
         
     return resultados
 
-reporte_semanal = procesar_jornada_laboral
+
+reporte_semanal = procesar_jornada_laboral(matriz_horas)
 
 print(f"{'Recurso':<15} | {'Horas Semanales':<15} | {'Clasificación'}")
 print("-" * 50)
