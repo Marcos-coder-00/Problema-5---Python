@@ -1,0 +1,31 @@
+[
+    ["Ana Gómez", 8, 9, 8, 8, 8],       # Total: 41 horas (Sobretiempo)
+    ["Carlos Pérez", 8, 8, 7, 8, 6],    # Total: 37 horas (Horario Estándar)
+    ["María López", 9, 9, 9, 8, 8],     # Total: 43 horas (Sobretiempo)
+    ["Juan Torres", 8, 8, 8, 8, 8]      # Total: 40 horas (Horario Estándar)
+]
+
+def procesar_jornada_laboral(matriz):
+    UMBRAL_HORAS = 40
+    resultados = []
+    
+    for fila in matriz:
+        nombre = fila[0]
+        total_horas = sum(fila[1:])
+        
+        # Lógica de negocio para clasificar la jornada
+        if total_horas > UMBRAL_HORAS:
+            clasificacion = "Sobretiempo"
+        else:
+            clasificacion = "Horario Estándar"
+            
+        resultados.append((nombre, total_horas, clasificacion))
+        
+    return resultados
+
+reporte_semanal = procesar_jornada_laboral
+
+print(f"{'Recurso':<15} | {'Horas Semanales':<15} | {'Clasificación'}")
+print("-" * 50)
+for nombre, horas, clase in reporte_semanal:
+    print(f"{nombre:<15} | {horas:<15} | {clase}")
